@@ -166,7 +166,12 @@ int main() {
     leftAndDown(l_bigCross, face);
     rightAndDown(r_bigCross, face);
 
-    shape_refresh();
+    try {
+        shape_refresh();
+    }
+    catch (RectangleException& e) {
+        cout << "HUI" << endl;
+    }
     std::cout << "=== Ready! ===\n";
     std::cin.get();
     screen_destroy();
